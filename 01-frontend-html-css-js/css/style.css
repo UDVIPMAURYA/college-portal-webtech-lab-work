@@ -115,14 +115,114 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
+    padding: 12px 15px;
     text-align: left;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 th {
-    background-color: #e6e6e6;
+    background-color: #003366;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+    background-color: #f4f8fc;
+}
+
+tr:hover {
+    background-color: #eaf2fb;
+}
+
+/* ===== Registration Form Card ===== */
+.form-card {
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 25px 30px;
+    background-color: #eaf2fb;
+    border: 1px solid #cfe0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-card label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #003366;
+    font-size: 14px;
+}
+
+.form-card input[type="text"],
+.form-card input[type="email"],
+.form-card input[type="tel"],
+.form-card input[type="password"],
+.form-card select {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #b8c9db;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+    outline: none;
+    border-color: #0055a5;
+    box-shadow: 0 0 4px rgba(0, 85, 165, 0.4);
+}
+
+.form-card button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.form-card button[type="submit"]:hover {
+    background-color: #0055a5;
+}
+
+
+/* ===== Form Messages ===== */
+.form-message {
+    font-size: 13px;
+    margin-bottom: 10px;
+    min-height: 16px;
+}
+
+.form-message.error {
+    color: #cc0000;
+}
+
+.form-message.success {
+    color: #007a33;
+}
+
+.form-footer-link {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
 }

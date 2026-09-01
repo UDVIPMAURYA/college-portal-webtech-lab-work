@@ -13,44 +13,55 @@
 
     <div class="content">
         <h2>Registration Form</h2>
-        <form id="registration-form">
-            <label for="name">Full Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
+        <form id="registration-form" class="form-card">
 
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
 
-            <label for="phone">Phone Number:</label><br>
-            <input type="tel" id="phone" name="phone" required><br><br>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
 
-            <label for="registerAs">Register As:</label><br>
-            <select id="registerAs" name="registerAs">
-                <option value="student">Student</option>
-                <option value="faculty">Faculty</option>
-                <option value="staff">Staff</option>
-            </select><br><br>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
 
-            <label for="department">Department:</label><br>
-            <select id="department" name="department">
-                <option value="cse">Computer Science & Engineering</option>
-                <option value="it">Information Technology</option>
-                <option value="ece">Electronics & Communication</option>
-            </select><br><br>
+            <div class="form-group">
+                <label for="registerAs">Register As:</label>
+                <select id="registerAs" name="registerAs">
+                    <option value="student">Student</option>
+                    <option value="faculty">Faculty</option>
+                    <option value="staff">Staff</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <select id="department" name="department">
+                    <option value="cse">Computer Science & Engineering</option>
+                    <option value="it">Information Technology</option>
+                    <option value="ece">Electronics & Communication</option>
+                </select>
+            </div>
 
             <!-- Shown only when "Student" is selected -->
-            <div id="student-fields">
-                <label for="course">Course:</label><br>
+            <div id="student-fields" class="form-group">
+                <label for="course">Course:</label>
                 <select id="course" name="course">
                     <option value="btech">B.Tech</option>
                     <option value="mtech">M.Tech</option>
                     <option value="diploma">Diploma</option>
-                </select><br><br>
+                </select>
             </div>
 
             <!-- Shown only when "Faculty" or "Staff" is selected -->
-            <div id="staff-fields" class="hidden">
-                <label for="designation">Designation:</label><br>
-                <input type="text" id="designation" name="designation"><br><br>
+            <div id="staff-fields" class="form-group hidden">
+                <label for="designation">Designation:</label>
+                <input type="text" id="designation" name="designation">
             </div>
 
             <button type="submit">Register</button>
