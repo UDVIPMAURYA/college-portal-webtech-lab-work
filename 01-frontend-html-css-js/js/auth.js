@@ -38,3 +38,43 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// Handles login form submission (checks against users saved in localStorage)
+document.addEventListener("DOMContentLoaded", function () {
+    const loginForm = document.getElementById("login-form");
+
+    if (loginForm) {
+        loginForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById("loginEmail").value.trim();
+            const password = document.getElementById("loginPassword").value;
+            const messageBox = document.getElementById("login-message");
+
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+
+            const matchedUser = users.find(function (user) {
+                return user.email === email && user.password === password;
+            });
+
+            if (!matchedUser) {
+                messageBox.textContent = "Invalid email or password.";
+                messageBox.className = "form-message error";
+                return;
+            }
+
+            // Save logged-in user (without password) for the navbar to read
+            localStorage.setItem("loggedInUser", JSON.stringify({
+                name: matchedUser.name,
+                email: matchedUser.email
+            }));
+
+            messageBox.textContent = "Login successful! Redirecting...";
+            messageBox.className = "form-message success";
+
+            setTimeout(function () {
+                window.location.href = "index.html";
+            }, 1000);
+        });
+    }
+});
