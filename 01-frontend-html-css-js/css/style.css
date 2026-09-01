@@ -7,9 +7,8 @@
 
 /* ===== Utility ===== */
 .hidden {
-    display: none;
+    display: none !important;
 }
-
 html, body {
     height: 100%;
     margin: 0;
@@ -79,6 +78,13 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
+}
+
+/* ===== Nav Auth Section ===== */
+#nav-guest,
+#nav-user {
+    display: inline-flex;
+    gap: 10px;
 }
 
 /* ===== Main Content ===== */
