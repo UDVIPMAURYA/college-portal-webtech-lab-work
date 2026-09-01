@@ -78,3 +78,70 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// Handles the "Forgot Password" two-step flow
+document.addEventListener("DOMContentLoaded", function () {
+    const verifyEmailBtn = document.getElementById("verify-email-btn");
+
+    if (verifyEmailBtn) {
+        const stepEmail = document.getElementById("step-email");
+        const stepNewPassword = document.getElementById("step-new-password");
+        const emailMessage = document.getElementById("email-message");
+        let verifiedEmail = null;
+
+        // Step 1: check if the entered email exists in localStorage
+        verifyEmailBtn.addEventListener("click", function () {
+            const email = document.getElementById("resetEmail").value.trim();
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+
+            const foundUser = users.find(function (user) {
+                return user.email === email;
+            });
+
+            if (!foundUser) {
+                emailMessage.textContent = "No account found with this email.";
+                emailMessage.className = "form-message error";
+                return;
+            }
+
+            verifiedEmail = email;
+            emailMessage.textContent = "Email verified. Set your new password below.";
+            emailMessage.className = "form-message success";
+
+            stepNewPassword.classList.remove("hidden");
+        });
+
+        // Step 2: update the password for the verified email
+        document.getElementById("forgot-password-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const newPassword = document.getElementById("newPassword").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            const resetMessage = document.getElementById("reset-message");
+
+            if (newPassword !== confirmPassword) {
+                resetMessage.textContent = "Passwords do not match.";
+                resetMessage.className = "form-message error";
+                return;
+            }
+
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+
+            const updatedUsers = users.map(function (user) {
+                if (user.email === verifiedEmail) {
+                    user.password = newPassword;
+                }
+                return user;
+            });
+
+            localStorage.setItem("users", JSON.stringify(updatedUsers));
+
+            resetMessage.textContent = "Password reset successful! Redirecting to login...";
+            resetMessage.className = "form-message success";
+
+            setTimeout(function () {
+                window.location.href = "login.html";
+            }, 1500);
+        });
+    }
+});
