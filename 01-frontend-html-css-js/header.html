@@ -4,29 +4,33 @@
 </header>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="departments.html">Departments</a>
-    <a href="registration-form.html">Register</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="departments.html">Departments</a>
+        <a href="registration-form.html">Register</a>
+    </div>
 
-    <span id="nav-guest">
-        <a href="login.html">Login</a>
-        <a href="signup.html">Sign Up</a>
-    </span>
+    <div class="nav-auth">
+        <span id="nav-guest">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </span>
 
-    <span id="nav-user" class="hidden">
-        <div class="profile-wrapper">
-            <button type="button" id="profile-trigger" class="profile-trigger">
-                <span class="avatar-circle" id="nav-avatar-initial"></span>
-                <span id="nav-profile-name"></span>
-            </button>
+        <span id="nav-user" class="hidden">
+            <div class="profile-wrapper">
+                <button type="button" id="profile-trigger" class="profile-trigger">
+                    <span class="avatar-circle" id="nav-avatar-initial"></span>
+                    <span id="nav-profile-name"></span>
+                </button>
 
-            <div id="profile-card" class="profile-card hidden">
-                <div class="profile-card-avatar" id="profile-card-avatar"></div>
-                <div class="profile-card-name" id="profile-card-name"></div>
-                <div class="profile-card-email" id="profile-card-email"></div>
-                <hr class="profile-card-divider">
-                <a href="#" id="nav-logout-link" class="profile-card-logout">Logout</a>
+                <div id="profile-card" class="profile-card hidden">
+                    <div class="profile-card-avatar" id="profile-card-avatar"></div>
+                    <div class="profile-card-name" id="profile-card-name"></div>
+                    <div class="profile-card-email" id="profile-card-email"></div>
+                    <hr class="profile-card-divider">
+                    <a href="#" id="nav-logout-link" class="profile-card-logout">Logout</a>
+                </div>
             </div>
-        </div>
-    </span>
+        </span>
+    </div>
 </nav>

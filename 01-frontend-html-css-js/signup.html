@@ -13,36 +13,43 @@
 
     <div class="content">
         <h2>Create Account</h2>
-        <form id="signup-form" class="form-card">
+        <form id="signup-form" class="form-card" novalidate>
 
-            <div class="form-group">
-                <label for="signupName">Full Name:</label>
-                <input type="text" id="signupName" name="signupName" required>
+        <div class="form-group">
+            <label for="signupName">Full Name:</label>
+            <input type="text" id="signupName" name="signupName">
+            <span class="field-error" id="signupName-error"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="signupEmail">Email:</label>
+            <input type="email" id="signupEmail" name="signupEmail">
+            <span class="field-error" id="signupEmail-error"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="signupPassword">Password:</label>
+            <div class="password-wrapper">
+                <input type="password" id="signupPassword" name="signupPassword">
+                <button type="button" class="toggle-password" data-target="signupPassword">Show</button>
             </div>
+            <span class="field-error" id="signupPassword-error"></span>
+        </div>
 
-            <div class="form-group">
-                <label for="signupEmail">Email:</label>
-                <input type="email" id="signupEmail" name="signupEmail" required>
-            </div>
+        <p id="signup-message" class="form-message"></p>
 
-            <div class="form-group">
-                <label for="signupPassword">Password:</label>
-                <input type="password" id="signupPassword" name="signupPassword" required>
-            </div>
+        <button type="submit">Sign Up</button>
 
-            <p id="signup-message" class="form-message"></p>
+        <p class="form-footer-link">Already have an account? <a href="login.html">Login here</a></p>
 
-            <button type="submit">Sign Up</button>
-
-            <p class="form-footer-link">Already have an account? <a href="login.html">Login here</a></p>
-
-        </form>
+    </form>
     </div>
 
     <div id="footer-placeholder"></div>
 
     <script src="js/include.js"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/password-toggle.js"></script>
     <script src="js/auth.js"></script>
 </body>
 </html>

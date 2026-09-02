@@ -13,32 +13,38 @@
 
     <div class="content">
         <h2>Login</h2>
-        <form id="login-form" class="form-card">
+        <form id="login-form" class="form-card" novalidate>
 
-            <div class="form-group">
-                <label for="loginEmail">Email:</label>
-                <input type="email" id="loginEmail" name="loginEmail" required>
+        <div class="form-group">
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" name="loginEmail">
+            <span class="field-error" id="loginEmail-error"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="loginPassword">Password:</label>
+            <div class="password-wrapper">
+                <input type="password" id="loginPassword" name="loginPassword">
+                <button type="button" class="toggle-password" data-target="loginPassword">Show</button>
             </div>
+            <span class="field-error" id="loginPassword-error"></span>
+        </div>
 
-            <div class="form-group">
-                <label for="loginPassword">Password:</label>
-                <input type="password" id="loginPassword" name="loginPassword" required>
-            </div>
+        <p id="login-message" class="form-message"></p>
 
-            <p id="login-message" class="form-message"></p>
+        <button type="submit">Login</button>
 
-            <button type="submit">Login</button>
+        <p class="form-footer-link">Don't have an account? <a href="signup.html">Sign up here</a></p>
+        <p class="form-footer-link"><a href="forgot-password.html">Forgot Password?</a></p>
 
-            <p class="form-footer-link">Don't have an account? <a href="signup.html">Sign up here</a></p>
-            <p class="form-footer-link"><a href="forgot-password.html">Forgot Password?</a></p>
-
-        </form>
+    </form>
     </div>
 
     <div id="footer-placeholder"></div>
 
     <script src="js/include.js"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/password-toggle.js"></script>
     <script src="js/auth.js"></script>
 </body>
 </html>

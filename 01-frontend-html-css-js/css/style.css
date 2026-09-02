@@ -61,12 +61,23 @@ header {
 /* ===== Navigation ===== */
 nav {
     background-color: #0055a5;
-    padding: 10px;
-    text-align: center;
+    padding: 10px 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     gap: 10px;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nav-auth {
+    display: flex;
+    align-items: center;
 }
 
 nav a {
@@ -162,7 +173,7 @@ tr:hover {
 }
 
 .form-group {
-    margin-bottom: 14px;
+    margin-bottom: 8px;
 }
 
 .form-card label {
@@ -193,7 +204,8 @@ tr:hover {
     box-shadow: 0 0 4px rgba(0, 85, 165, 0.4);
 }
 
-.form-card button[type="submit"] {
+.form-card button[type="submit"],
+.form-card button[type="button"]:not(.toggle-password) {
     width: 100%;
     padding: 12px;
     margin-top: 6px;
@@ -207,7 +219,8 @@ tr:hover {
     transition: background-color 0.2s;
 }
 
-.form-card button[type="submit"]:hover {
+.form-card button[type="submit"]:hover,
+.form-card button[type="button"]:hover:not(.toggle-password) {
     background-color: #0055a5;
 }
 
@@ -325,4 +338,37 @@ tr:hover {
 
 .profile-card-logout:hover {
     background-color: #fbeaea;
+}
+
+/* ===== Field-level Errors ===== */
+.field-error {
+    display: block;
+    color: #cc0000;
+    font-size: 11px;
+    margin-top: 2px;
+    min-height: 13px;
+    line-height: 13px;
+}
+
+/* ===== Password Show/Hide ===== */
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 55px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #0055a5;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px 6px;
 }
