@@ -232,3 +232,97 @@ tr:hover {
     margin-top: 12px;
     font-size: 14px;
 }
+
+
+/* ===== Profile Dropdown ===== */
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.avatar-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #003366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.profile-card {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 240px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.profile-card-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #0055a5;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+}
+
+.profile-card-name {
+    font-weight: bold;
+    color: #003366;
+    font-size: 16px;
+}
+
+.profile-card-email {
+    color: #666;
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.profile-card-divider {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 14px 0;
+}
+
+.profile-card-logout {
+    display: block;
+    color: #cc0000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 6px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.profile-card-logout:hover {
+    background-color: #fbeaea;
+}

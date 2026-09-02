@@ -14,7 +14,19 @@
     </span>
 
     <span id="nav-user" class="hidden">
-        <a href="#" id="nav-profile-link"></a>
-        <a href="#" id="nav-logout-link">Logout</a>
+        <div class="profile-wrapper">
+            <button type="button" id="profile-trigger" class="profile-trigger">
+                <span class="avatar-circle" id="nav-avatar-initial"></span>
+                <span id="nav-profile-name"></span>
+            </button>
+
+            <div id="profile-card" class="profile-card hidden">
+                <div class="profile-card-avatar" id="profile-card-avatar"></div>
+                <div class="profile-card-name" id="profile-card-name"></div>
+                <div class="profile-card-email" id="profile-card-email"></div>
+                <hr class="profile-card-divider">
+                <a href="#" id="nav-logout-link" class="profile-card-logout">Logout</a>
+            </div>
+        </div>
     </span>
 </nav>
