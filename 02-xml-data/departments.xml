@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<departments>
+
+    <department>
+        <name>Computer Science &amp; Engineering</name>
+        <hod>Dr. R. Sharma</hod>
+        <established>2005</established>
+        <intake>120</intake>
+    </department>
+
+    <department>
+        <name>Information Technology</name>
+        <hod>Dr. S. Verma</hod>
+        <established>2008</established>
+        <intake>60</intake>
+    </department>
+
+    <department>
+        <name>Electronics &amp; Communication</name>
+        <hod>Dr. A. Gupta</hod>
+        <established>2005</established>
+        <intake>110</intake>
+    </department>
+
+</departments>
