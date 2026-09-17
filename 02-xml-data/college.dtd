@@ -1,0 +1,12 @@
+<!ELEMENT college (course+, student+)>
+
+<!ELEMENT course (name, credits)>
+<!ATTLIST course id CDATA #REQUIRED>
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT credits (#PCDATA)>
+
+<!ELEMENT student (name, enrolledCourse)>
+<!ATTLIST student rollNo CDATA #REQUIRED>
+
+<!ELEMENT enrolledCourse (#PCDATA)>

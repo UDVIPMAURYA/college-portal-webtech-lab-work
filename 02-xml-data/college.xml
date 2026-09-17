@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="college.xsl"?>
+<!DOCTYPE college SYSTEM "college.dtd">
+<college>
+
+    <course id="CSE101">
+        <name>Database Management Systems</name>
+        <credits>4</credits>
+    </course>
+
+    <course id="CSE102">
+        <name>Web Technology</name>
+        <credits>3</credits>
+    </course>
+
+    <course id="CSE103">
+        <name>Data Structures</name>
+        <credits>4</credits>
+    </course>
+
+    <student rollNo="2201234">
+        <name>Udvip Maurya</name>
+        <enrolledCourse>CSE102</enrolledCourse>
+    </student>
+
+    <student rollNo="2201235">
+        <name>Ravi Kumar</name>
+        <enrolledCourse>CSE101</enrolledCourse>
+    </student>
+
+    <student rollNo="2201236">
+        <name>Priya Singh</name>
+        <enrolledCourse>CSE103</enrolledCourse>
+    </student>
+
+</college>
