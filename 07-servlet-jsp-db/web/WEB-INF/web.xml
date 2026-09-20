@@ -7,3 +7,13 @@
     <servlet-name>RegistrationServlet</servlet-name>
     <url-pattern>/RegistrationServlet</url-pattern>
 </servlet-mapping>
+
+<servlet>
+    <servlet-name>LoginDBServlet</servlet-name>
+    <servlet-class>LoginDBServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>LoginDBServlet</servlet-name>
+    <url-pattern>/LoginDBServlet</url-pattern>
+</servlet-mapping>
