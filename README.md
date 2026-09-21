@@ -129,22 +129,25 @@ Modules 6–8 share one deployed Tomcat web app (`college-portal`),
 since they build on each other. Requires **Apache Tomcat 9** and,
 from Module 7 onward, a running **MySQL** server.
 
-1. Compile each module's `.java` files with the Servlet API (and,
+1. For Module 7: run `07-servlet-jsp-db/db-setup.sql` in MySQL
+   Workbench (or the `mysql` CLI) to create the `college_portal`
+   database and `users` table.
+2. Compile each module's `.java` files with the Servlet API (and,
    for Module 7+, the MySQL Connector/J jar) on the classpath:
    ```bash
    javac --release 21 -cp "<servlet-api.jar>;<mysql-connector.jar>" *.java
    ```
-2. Create `<tomcat>/webapps/college-portal/`.
-3. Copy each module's `web/` contents (HTML, JSP, `WEB-INF/web.xml`)
+3. Create `<tomcat>/webapps/college-portal/`.
+4. Copy each module's `web/` contents (HTML, JSP, `WEB-INF/web.xml`)
    into it, merging the `<servlet>` / `<servlet-mapping>` entries
    from each module's `web.xml` into one combined file.
-4. Copy each module's compiled `.class` files into
+5. Copy each module's compiled `.class` files into
    `webapps/college-portal/WEB-INF/classes/`.
-5. For Module 7: copy `mysql-connector-j-*.jar` into `<tomcat>/lib/`,
+6. For Module 7: copy `mysql-connector-j-*.jar` into `<tomcat>/lib/`,
    and create `db.properties` in `WEB-INF/classes/` from
    `07-servlet-jsp-db/src/db.properties.example` with your own MySQL
    credentials (gitignored — never committed).
-6. Start Tomcat (`<tomcat>/bin/startup.bat`) and visit
+7. Start Tomcat (`<tomcat>/bin/startup.bat`) and visit
    `http://localhost:8080/college-portal/`.
 
 ---
